@@ -14,16 +14,12 @@ echo \
 
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y make
 
 sudo usermod -aG docker ${USER}
 
-su ${USER}
-echo "vagrant"
+echo "vagrant" | su -kS ${USER}
 
-sudo apt-get install -y make
-
-git clone https://github.com/Xride20/dynamatic.git
-cd dynamatic
 git submodule init
 git submodule update
 
